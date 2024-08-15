@@ -6,7 +6,7 @@
 --primary-bg-color:#111217;/*cor do principal fundo*/
 /*bg=background== cor do fundo*/
 --secudary-bg-color:#28292E;
---primary-border-color:#56575A;
+--primary-border-color:#28292E;
 --secundary-border-color: #56575A;
 --title-color:#F0F0F0;
 --link-hover:#f0f0f0;
@@ -104,4 +104,27 @@ i{
 }
 .menu-icon{
     font-size: 1.5rem;
+}
+.menu-text{
+    font-size: .75rem;
+    text-transform: capitalize;
+}
+.header-nav{
+    display: none;
+}
+.menu-principal{
+    gap: 1rem;
+}
+@media(min-width: 768px) {
+    .header {
+        position: fixed;
+        border-bottom:  1px solid var(--primary-border-color);
+        padding: 1 rem 6 rem;
+    }
+    .nav-mobile{
+       display: none;
+   }
+    .header-nav{
+    display: flex;
+    }
 }
