@@ -2,28 +2,26 @@
 
 /*variaveis de cores*/
 :root, :root[data-theme='dark'] {
---primary-color: #f0f0f0; /*cor do principal textos*/
---primary-bg-color:#111217;/*cor do principal fundo*/
-/*bg=background== cor do fundo*/
---secudary-bg-color:#28292E;
---primary-border-color:#28292E;
---secundary-border-color: #56575A;
---title-color:#F0F0F0;
---link-hover:#f0f0f0;
---link-color:#8F8F8F;
---icon-color:#c7c8c9;
+    --primary-color: #f0f0f0;
+    --primary-bg-color: #111217;
+    --secundary-bg-color:#28292E;
+    --primary-border-color:#28292E;
+    --secundary-border-color:hwb(225 84% 11%);
+    --title-color:#F0F0F0;
+    --link-hover:#F0F0F0;
+    --link-color:#8F8F8F;
+    --icon-color:#C7C8C9;
 }
-/* TEMA LIGHT*/
-:root[data-theme='light']{
-    --primary-color:#0000;/*cor principal do texto*/
+:root[data-theme='light'] {
+    --primary-color: #000;
     --primary-bg-color: #f0f2f5;
     --secundary-bg-color:#C7C8C9;
     --primary-border-color:#C7C8C9;
-    --secundary-border-color:#9A9A9C;
+    --secundary-border-color:#47474b;
     --title-color:#0B0B0F;
     --link-hover:#0B0B0F;
     --link-color:#a3a2a2;
-    --incon-color:#56575A;
+    --icon-color:#56575A;
 }
 * {
     margin: 0;
@@ -32,12 +30,12 @@
     vertical-align: baseline;
     list-style: none;
     scrollbar-width: thin;
-    scrollbar-color: var(--secundary-bg-color) transparent;
+    scrollbar-color: var(--secondary-bg-color) transparent;
 }
-body{
+body {
     background: var(--primary-bg-color);
+    font-family: 'Playwrite', 'Poppins', 'Rubik';
     color: var(--primary-color);
-    font-family: "Poppins";
 }
 a {
     text-decoration: none;
@@ -46,99 +44,197 @@ a {
 a:hover {
     color: var(--primary-color);
 }
-i{
-    color:var(--icon-color);
+i {
+    color: var(--icon-color);
 }
-.header{
+.header {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
-    width:100%;
+    width: 100%;
     padding: 0.5rem 1rem;
-    z-index: 2s;/*sobreposição*/
-} 
-.header-logo .logo{
+    z-index: 2s;
+}
+.header-logo .logo {
     width: 3.25rem;
     height: 3.25rem;
 }
 .header-logo .logo2 {
-    width: 10.25rem;
-    height: 3.25rem;
-    margin-left: 100px;
+    width: 9rem;
+    height: 3rem;
+    margin-left: 1px;
     position: relative;
-    bottom: 0px;
+    bottom: 1px;
 }
-html[data-theme='light'] .logo{
+html[data-theme='light'] .logo {
     filter: invert(1);
 }
-html[data-theme='light'] .logo2{
+html[data-theme='light'] .logo2 {
     filter: invert(1);
 }
-
 #toggleTheme {
     font-size: 1.5rem;
     color: var(--icon-color);
     cursor: pointer;
-    transition:ease-in-out .4s;
+    transition: ease-in-out .4s;
 }
-.menu{
+.menu {
     display: flex;
-    /*torna o elemnto um Flex container automaticamente transformando todos os filhos diretos em Flex itens*/
     align-items: center;
     background: var(--primary-bg-color);
     gap: 1rem;
 }
-.menu-link{
+.menu-link {
     display: flex;
     align-items: center;
     gap: .5rem;
 }
-.menu-mobile{/*UL*/
-    width:100%;
+.menu-mobile {
+    width: 100%;
     position: fixed;
     bottom: 0;
     justify-content: space-between;
     border-top: 1px solid var(--primary-border-color);
 }
-.menu-mobile .menu-link{
-  flex-direction: column;
-  justify-content: center;
-  padding: .5rem 1rem;
+.menu-mobile .menu-link {
+    flex-direction: column;
+    justify-content: center;
+    padding: .5rem 1rem;
 }
 .menu-link.active .menu-icon,
 .menu-link.active .menu-text,
-.menu-link:hover  .menu-icon,
-.menu-link:hover  .menu-text{
+.menu-link:hover .menu-icon,
+.menu-link:hover .menu-text {
     color: var(--link-hover);
 }
-.menu-icon, .menu-text{
+.menu-icon, .menu-text {
     color: var(--link-color);
     font-weight: 600;
 }
-.menu-icon{
+.menu-icon {
     font-size: 1.5rem;
 }
-.menu-text{
+.menu-text {
     font-size: .75rem;
-    text-transform: capitalize;
+    text-transform: uppercase;
 }
-.header-nav{
+.header-nav {
     display: none;
 }
-.menu-principal{
+.menu-principal {
     gap: 1rem;
 }
-@media(min-width: 768px) {
+.menu-social {
+    gap: 1rem;
+}
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.62rem;
+    width: 100%;
+    background: transparent;
+    border-radius: 3rem;
+    color: var(--secundary-border-color);
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+    transition: ease-in-out .3s;
+}
+.btn-primary {
+    border: 1px solid var(--secundary-border-color);
+}
+.btn:hover {
+    transform: scale(1.07);
+    transition: ease-in-out .3s;
+}
+.btn span, .btn i {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+.btn-primary span {
+    color: var(--primary-color);
+}
+#home {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem
+}
+.video iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+#home, .projetos, .sobre, .contatos {
+    padding: 7rem 5rem;
+}
+.projetos {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.projetos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+.card-cover {
+    width: 20%;
+    border-radius: 2rem;
+    object-fit: cover;
+    object-position: center;
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.card-title {
+    font-size: 2rem;
+    color: var(--title-color);
+    font-weight: 400;
+    font-family: 'Poppins';
+}
+.card-description {
+    color: var(--primary-color);
+    text-align: justify;
+}
+.card-lista {
+    margin-left: 2rem;
+}
+.card-item {
+    list-style: circle;
+    margin: 0.25rem;
+}
+.card-button, .card-description {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.card-button .btn {
+    padding: .65rem 1.25rem;
+}
+.card-button .btn span {
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) {
     .header {
         position: fixed;
-        border-bottom:  1px solid var(--primary-border-color);
-        padding: 1 rem 6 rem;
+        border-bottom: 1px solid var(--primary-border-color);
+        padding: 1rem 6rem;
     }
-    .nav-mobile{
-       display: none;
-   }
-    .header-nav{
-    display: flex;
+    .nav-mobile {
+        display: none;
+    }
+    .header-nav {
+        display: flex;
     }
 }
