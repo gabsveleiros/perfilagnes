@@ -183,6 +183,11 @@ html[data-theme='light'] .logo2 {
     flex-direction: column;
     gap: 4rem;
 }
+.projeto-card{
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
 .card-cover {
     width: 20%;
     border-radius: 2rem;
@@ -224,7 +229,7 @@ html[data-theme='light'] .logo2 {
 .card-button .btn span {
     font-size: 1rem;
 }
-
+/*CSS RESPONSIVO*/
 @media (min-width: 768px) {
     .header {
         position: fixed;
@@ -237,4 +242,43 @@ html[data-theme='light'] .logo2 {
     .header-nav {
         display: flex;
     }
+    .header-nav, .header-toggle{
+        min-width: 30%;
+    }
+    h1{
+        font-size: 5rem;
+    }
+    h2{
+        font-size: 3rem;
+    }
+    #home, .projetos, .sobre, .contato{
+        padding: 8rem 6rem 4rem 6rem;
+    }
+    .main-content{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .contato{
+    padding: 6rem;
+    }
+    .contanto p{
+    width: 80%;
+    }
+    footer{
+    margin: 0;
+    }
+}
+@media(min-width:992px){
+    .projeto-card{
+        flex-direction: row;
+    }
+    .card-reverse{
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .card-cover{
+        width: 55%;
+    }
+
 }
