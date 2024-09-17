@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');toggleTheme
 
 /* variáveis de cores */
 :root,  
@@ -79,7 +79,9 @@ html[data-theme='light'] .logo2 {
     color: var(--icon-color);
     cursor: pointer;
     transition: ease-in-out .4s;
-    z-index: 99999;
+    float: right;
+    position: relative;
+    
 }
 .menu {
     display: flex;
@@ -247,10 +249,72 @@ html[data-theme='light'] .logo2 {
     justify-content: flex-start;
 }
 .sobre-perfil{/*imagem*/
-width: 100%;
-border-radius: 50rem;
-border:  8px solid var(--link-color);/*cor da borda*/
+  width: 100%;
+  border-radius: 50rem;
+  border:  8px solid var(--link-color);/*cor da borda*/
 }
+.sobre-descricao{
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-start;
+ text-align: justify;
+ gap: 1rem;
+}
+.sobre-icones{
+ display: flex;
+ align-items: center;
+ gap: 0.50rem;
+}
+.sobre-icones i{
+    font-size: 1rem;
+    color: hsl(0, 7%, 61%);
+}
+.sobre-content2 .col1,
+.sobre-content2 .col2{
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  gap: 1rem;
+}
+.sobre-content2 .col1 .row1, 
+.sobre-content2  .col1 .row2{
+ display: flex;
+ flex-direction: column;
+ gap: .5rem;
+}
+/*--Cursos--*/
+.accordion-header{
+    width: 100%;
+    display: flex;
+    padding: 0.75rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    border: 1px solid var(--primary-border-color);
+    text-align: left;
+    cursor: pointer;
+    transition: ease-in-out .3s;
+}
+.accordion-header span{
+   color: var(--title-color);
+}
+.accordion-header.start{
+    border-radius: 1rem 1rem 0rem 0rem;
+}
+.accordion-header.end,
+.accordion-item.active .accordion-body.end{
+    border-radius: 0rem 0rem 1rem 1rem;
+}
+.accordion-body{
+    padding: 1.25rem;
+    flex-direction: column;
+    text-align: justify;
+    align-items: flex-start;
+    gap: 1rem;
+    border: 1px solid var(--primary-border-color);
+}
+
+
 
 /* css responsivo */
 @media (min-width: 768px) {
