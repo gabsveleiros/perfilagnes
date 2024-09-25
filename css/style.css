@@ -50,12 +50,13 @@ i {
 }
 .header {
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     padding: 0.5rem 1rem;
     z-index: 2;
+    background: var(--primary-bg-color);
 }
 .header-logo .logo {
     width: 3.25rem;
@@ -305,7 +306,11 @@ html[data-theme='light'] .logo2 {
 .accordion-item.active .accordion-body.end{
     border-radius: 0rem 0rem 1rem 1rem;
 }
+.accordion-item.active .accordion-item.end{
+    border-radius: 0;
+}
 .accordion-body{
+    display: none;
     padding: 1.25rem;
     flex-direction: column;
     text-align: justify;
@@ -313,14 +318,50 @@ html[data-theme='light'] .logo2 {
     gap: 1rem;
     border: 1px solid var(--primary-border-color);
 }
+.accordion-item.active .accordion-header{
+    background: var(--secundary-bg-color);
+}
+.accordion-item.active .accordion-body{
+    display: flex;
+}
+/*rotacionar icone*/
+.accordion-item.active .bi-caret-down-fill {
+    transform: rotate(180deg);
+}
+/*contato*/
+.contato {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border-top: 3px solid var(--primary-border-color);
+    border-bottom: 3px solid var(--secundary-border-color);
+}
+.contato p {
+    text-align: center;
+}
+.contato .btn {
+    width: auto;
+}
+.contato .email {
+    text-transform: uppercase;
+}
+/*roda pé = footer*/
+footer {
+    margin-bottom: 5rem;
+}
+footer p {
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem;
+}
 
-
-
-/* css responsivo */
-@media (min-width: 768px) {
+/* CSS Responsivo */
+@media (min-width: 768px)  {
     .header {
         position: fixed;
-        border-bottom: 1px solid var(--primary-border-color);
+        border-bottom: 3px solid var(--primary-border-color);
         padding: 1rem 6rem;
     }
     .nav-mobile {
@@ -329,20 +370,17 @@ html[data-theme='light'] .logo2 {
     .header-nav {
         display: flex;
     }
-    .header-nav,
+    .header-nav, 
     .header-toggle {
         min-width: 30%;
     }
     h1 {
-        font-size: 4rem;
+        font-size: 5rem;
     }
     h2 {
         font-size: 3rem;
     }
-    #home,
-    .projetos,
-    .sobre,
-    .contato {
+    #home, .projetos, .sobre, .contato {
         padding: 8rem 6rem 4rem 6rem;
     }
     .main-content {
@@ -350,35 +388,37 @@ html[data-theme='light'] .logo2 {
         flex-direction: column;
         align-items: flex-start;
     }
-    .contato p {
+    .contato {
         padding: 6rem;
     }
-    .contato {
+    .contato p {
         width: 80%;
     }
     footer {
         margin: 0;
     }
-}
+}  
+
+
+/* -------- fim resolução 768 */
 
 @media (min-width: 992px) {
     .projeto-card {
         flex-direction: row;
+        margin-bottom: 50px;
     }
     .card-reverse {
         flex-direction: row-reverse;
         justify-content: space-between;
     }
     .card-cover {
-        width: 35%;
+        width: 55%;
     }
-    .card-cover3 {
-        width: 20%;
-    }
-    .sobre{
+    .sobre {
         gap: 5rem;
     }
-    .sobre-content1, .sobre-content2{
+    .sobre-content1, 
+    .sobre-content2 {
         display: grid;
         grid-template-columns: 34% 60%;
         justify-content: flex-start;
@@ -386,20 +426,22 @@ html[data-theme='light'] .logo2 {
         gap: 4rem;
     }
 }
-@media (min-width:1200px){
+
+@media (min-width: 1200px) {
     h2 {
         font-size: 4rem;
     }
-    h3{
+    h3 {
         font-size: 2.5rem;
     }
-    #home{
+    #home {
         padding: 10rem 6rem 2rem;
     }
     p, span, li {
         font-size: 1.15rem;
     }
-    .card-button .btn, .descricao-button .btn {
+    .card-button .btn,
+    .descricao-button .btn {
         width: auto;
     }
 }
